@@ -88,11 +88,15 @@ If you output anything other than a single number, the system will fail.
 
 = 需要付费吗？ =
 
-插件本身是免费的，但你需要有效的 AI API 密钥。大多数 AI API 服务需要付费使用，费用根据调用 token 数计算。
+插件本身是免费的，但你需要一个 AI API 密钥，大多数 AI API 服务需要付费使用，根据使用的 token 数计费。
 
 = 评论数据会被发送到哪里？ =
 
-评论数据会被发送到你配置的 API 进行评分。请确保使用可信的 API 服务商并查看其隐私政策。插件本身不会收集或存储任何数据到第三方服务器。
+评论数据会被发送到你配置的 API 进行评分，请确保使用可信的 API 服务商并查看其隐私政策，插件本身不会收集或存储任何数据到第三方服务器。
+
+= 所有选项都配置好了，依旧请求失败怎么办？ =
+
+请检查 API 端点后面是否添加了“/v1/chat/completions”。
 
 == Screenshots ==
 1. 日志界面

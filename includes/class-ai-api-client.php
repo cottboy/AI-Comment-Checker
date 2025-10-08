@@ -136,6 +136,7 @@ class AI_API_Client {
             'headers' => array(
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $this->api_key,
+                'User-Agent' => 'AI Comment Checker WordPress Plugin', // 自定义 User-Agent 标识
             ),
             'body' => wp_json_encode( $request_body ),
             'timeout' => $this->timeout,
