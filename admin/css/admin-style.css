@@ -1,0 +1,118 @@
+/**
+ * AI Comment Checker 管理后台样式
+ *
+ * @package AI_Comment_Checker
+ */
+
+/* 主容器 */
+.ai-comment-checker-wrap {
+    /* 将顶部外边距从 20px 调整为 10px，使标题与页面上边距更均衡 */
+    margin: 10px 20px 0 0;
+}
+
+/* 标签页导航 - 减少与标题的间距 */
+.ai-comment-checker-wrap .nav-tab-wrapper {
+    margin-top: 10px;
+}
+
+/* 标签页内容 - 减少与导航的间距 */
+.tab-content {
+    padding: 15px 20px 20px;
+    margin-top: 10px;
+}
+
+/* 日志操作按钮 - 减少下边距 */
+.logs-actions {
+    margin-bottom: 10px;
+}
+
+/* 日志表格 */
+.ai-comment-checker-logs table {
+    margin-top: 20px;
+}
+
+/* 评论者名称列 - 限制宽度并显示省略号 */
+.comment-author-preview {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 评论内容列 - 限制宽度并显示省略号 */
+.comment-content-preview {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 时间列 - 限制宽度并显示省略号 */
+.comment-time-preview {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 分页 */
+.tablenav {
+    margin-top: 20px;
+}
+
+.tablenav-pages {
+    float: right;
+}
+
+.tablenav-pages .pagination-links {
+    display: flex;
+    gap: 5px;
+}
+
+.tablenav-pages a,
+.tablenav-pages span {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    text-decoration: none;
+    color: #2271b1;
+}
+
+.tablenav-pages a:hover {
+    background: #f0f0f0;
+}
+
+.tablenav-pages .current {
+    background: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+
+/* 表单样式 */
+.form-table th {
+    width: 200px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="url"],
+.form-table input[type="password"],
+.form-table input[type="number"],
+.form-table textarea,
+.form-table select {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-table .description {
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 782px) {
+    .form-table th {
+        width: auto;
+    }
+}
+
