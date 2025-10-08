@@ -96,7 +96,7 @@ If you output anything other than a single number, the system will fail.
 
 = 所有选项都配置好了，依旧请求失败怎么办？ =
 
-请检查 API 端点后面是否添加了“/v1/chat/completions”。
+请检查 API 端点后面是否添加了/v1/chat/completions。
 
 == Screenshots ==
 1. 日志界面
