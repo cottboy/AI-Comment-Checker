@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: AI Comment Checker
- * Description: 使用 AI 大模型自动检测和过滤垃圾评论
+ * Description: Using AI large language models to automatically detect and filter spam comments
  * Version: 1.0.0
  * Author: cottboy
  * Author URI: https://www.joyfamily.top/
