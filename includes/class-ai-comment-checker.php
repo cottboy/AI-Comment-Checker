@@ -108,8 +108,9 @@ If you output anything other than a single number, the system will fail.',
      * @return array 处理后的评论数据
      */
     public function check_comment( $commentdata ) {
-        // 如果 API 密钥未配置，跳过检查
-        if ( empty( $this->settings['api_key'] ) ) {
+
+        // 如果 API 配置不完整，跳过检查
+        if ( empty( $this->settings['api_key'] ) || empty( $this->settings['api_endpoint'] ) || empty( $this->settings['model_id'] ) ) {
             return $commentdata;
         }
 

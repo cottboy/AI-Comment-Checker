@@ -98,16 +98,6 @@ class AI_API_Client {
             );
         }
         
-        // 验证 API 配置
-        if ( empty( $this->api_endpoint ) || empty( $this->api_key ) ) {
-            return array(
-                'success' => false,
-                'score' => null,
-                'status_code' => null,
-                'error' => __( 'API 配置不完整', 'ai-comment-checker' ),
-            );
-        }
-        
         // 构建用户消息
         $user_message = sprintf(
             "Commenter Name: %s\nComment Content: %s",

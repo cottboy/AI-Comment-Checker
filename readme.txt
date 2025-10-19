@@ -1,6 +1,6 @@
 === AI Comment Checker ===
 Contributors: cottboy
-Tags: ai, llm, anti-spam-comments, spam-comments, comment
+Tags: ai, llm, spam, spam-comments, comment
 Requires at least: 5.0
 Tested up to: 6.8
 Stable tag: 1.0.0
@@ -8,31 +8,31 @@ Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-使用 AI 大模型自动检测和过滤垃圾评论，支持兼容 OpenAI 格式的 API。
+Using AI large language models to automatically detect and filter spam comments, supporting APIs compatible with the OpenAI format.
 
 == Description ==
 
-AI Comment Checker 使用 AI 大模型自动检测和过滤垃圾评论。
+AI Comment Checker uses AI large language models to automatically detect and filter spam comments.
 
-= 优势 =
+= Features =
 
-* 支持任何兼容 OpenAI 格式的 API
-* 自定义 AI 提示词，根据网站特点调整评分标准
-* 可配置的分数阈值，灵活控制过滤强度
-* 详细的日志记录，追踪每条评论的处理过程
+* Supports any API compatible with the OpenAI format
+* Customizable AI prompts to adjust scoring criteria based on the characteristics of the website
+* Configurable score thresholds for flexible control over filtering intensity
+* Detailed logging to track the processing of each comment
 
-= 工作流程 =
+= Workflow =
 
-1. 访客提交评论
-2. 插件拦截评论，发送给 AI 进行评分
-3. AI 返回 0-100 的分数（0=垃圾，100=优质）
-4. 根据分数和阈值自动处理评论：
-   * 分数 >= 阈值：自动通过
-   * 分数 < 阈值：根据设置移到垃圾或移到待审核
-   * 超时/错误：根据设置移到待审核或直接通过
-5. 记录详细日志供管理员查看
+1. Visitor submits a comment
+2. The plugin intercepts the comment and sends it to the AI for scoring
+3. The AI returns a score between 0 and 100 (0 = spam, 100 = high quality)
+4. The comment is automatically processed based on the score and threshold:
+   * Score >= threshold: approved
+   * Score < threshold: moved to spam or moved to moderation based on settings
+   * Timeout/error: moved to moderation or directly approved based on settings
+5. Detailed logs are recorded for administrators to review
 
-= 当前版本默认系统提示词 =
+= Default system prompt in the current version =
 
 `
 You are a spam comment detection system. Your ONLY task is to output a single number between 0 and 100.
@@ -59,55 +59,60 @@ If you output anything other than a single number, the system will fail.
 
 == Installation ==
 
-= 自动安装 =
+= Automatic installation =
 
-1. 登录 WordPress 管理后台
-2. 进入"插件" > "添加插件"
-3. 搜索 "AI Comment Checker"
-4. 点击"立即安装"
-5. 安装完成后点击"启用"
+1. Log in to the WordPress admin dashboard
+2. Navigate to "Plugins" > "Add New"
+3. Search for "AI Comment Checker"
+4. Click "Install Now"
+5. After installation is complete, click "Activate"
 
-= 手动安装 =
+= Manual installation =
 
-1. 下载插件 zip 文件
-2. 登录 WordPress 管理后台
-3. 进入"插件" > "添加插件" > "上传插件"
-4. 选择下载的 zip 文件
-5. 点击"立即安装"
-6. 安装完成后点击"启用"
+1. Download the plugin zip file
+2. Log in to the WordPress admin dashboard
+3. Go to "Plugins" > "Add New" > "Upload Plugin"
+4. Select the downloaded zip file
+5. Click "Install Now"
+6. After the installation is complete, click "Activate"
 
-= FTP 安装 =
+= FTP Installation =
 
-1. 解压插件 zip 文件
-2. 通过 FTP 上传 `ai-comment-checker` 文件夹到 `/wp-content/plugins/` 目录
-3. 登录 WordPress 管理后台
-4. 进入"插件"页面
-5. 找到 "AI Comment Checker" 并点击"启用"
+1. Unzip the plugin zip file
+2. Upload the `ai-comment-checker` folder to the `/wp-content/plugins/` directory via FTP
+3. Log in to the WordPress admin dashboard
+4. Go to the "Plugins" page
+5. Locate "AI Comment Checker" and click "Activate"
 
 == Frequently Asked Questions ==
 
-= 需要付费吗？ =
+= Does it require payment? =
 
-插件本身是免费的，但你需要一个 AI API 密钥，大多数 AI API 服务需要付费使用，根据使用的 token 数计费。
+The plugin itself is free, but you need an AI API key. Most AI API services require payment based on the number of tokens used.
 
-= 评论数据会被发送到哪里？ =
+= Where will the comment data be sent? =
 
-评论数据会被发送到你配置的 API 进行评分，请确保使用可信的 API 服务商并查看其隐私政策，插件本身不会收集或存储任何数据到第三方服务器。
+Comment data will be sent to the API you configure for scoring. Make sure to use a trusted API provider and review its privacy policy. The plugin itself does not collect or store any data on third-party servers.
 
-= 所有选项都配置好了，依旧请求失败怎么办？ =
+= How much additional wait time will be added when submitting a comment? =
 
-请检查 API 端点后面是否添加了/v1/chat/completions。
+It adds about 5 seconds, depending on the service provider and model used. Using a non-thinking model can effectively reduce wait time.
+
+= What should I do if the request still fails after all options are configured? =
+
+Check whether /v1/chat/completions is added after the API endpoint.
 
 == Screenshots ==
-1. 日志界面
-2. 设置界面
+
+1. Log interface  
+2. Settings interface
 
 == Changelog ==
 
 = 1.0.0 =
-首个版本发布
+First version released
 
 == Upgrade Notice ==
 
 = 1.0.0 =
-首个版本发布
+First version released
